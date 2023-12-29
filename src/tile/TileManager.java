@@ -22,7 +22,7 @@ public class TileManager {
         tile = new Tile[15];
         
         getTileImage();
-        loadMap("./src/maps/alphaworldmap2.txt");
+        loadMap("./src/maps/testmap1.csv");
     }
 
     
@@ -37,25 +37,28 @@ public class TileManager {
             File f6 = new File("./src/tiles/tree.png");
 
             tile[0] = new Tile();
-            tile[0].image = ImageIO.read(f1); //grass
+            tile[0].image = ImageIO.read(f5); //dirt
 
             tile[1] = new Tile();
-            tile[1].image = ImageIO.read(f2); //stonewall
-            tile[1].collision = true;
+            tile[1].image = ImageIO.read(f1); //grass
 
             tile[2] = new Tile();
-            tile[2].image = ImageIO.read(f3); //water
-            tile[2].collision = true;
+            tile[2].image = ImageIO.read(f4); //sand
 
             tile[3] = new Tile();
-            tile[3].image = ImageIO.read(f4); //sand
+            tile[3].image = ImageIO.read(f2); //stonewall
+            tile[3].collision = true;
 
             tile[4] = new Tile();
-            tile[4].image = ImageIO.read(f5); //dirt
+            tile[4].image = ImageIO.read(f6); //tree
+            tile[4].collision = true;
 
             tile[5] = new Tile();
-            tile[5].image = ImageIO.read(f6); //tree
+            tile[5].image = ImageIO.read(f3); //water
             tile[5].collision = true;
+
+
+            
 
             
             
@@ -75,7 +78,7 @@ public class TileManager {
                 String line = sc.nextLine();
 
                 while(col < gp.maxWorldCol) {
-                    String numbers[] = line.split(" ");
+                    String numbers[] = line.split(",");
 
                     int num = Integer.parseInt(numbers[col]);
 
