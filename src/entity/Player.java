@@ -32,9 +32,9 @@ public class Player extends Entity{
         collisionOn = true;
     }
     public void setDefaultValues(){
-
-        worldX = gp.tileSize * 24;
-        worldY = gp.tileSize * 24;
+        // SPAWN POINT
+        worldX = gp.tileSize * 29;
+        worldY = gp.tileSize * 26;
         
         speed = 4;
         direction= "down";
